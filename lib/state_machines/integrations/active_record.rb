@@ -452,8 +452,8 @@ module StateMachines
           define_helper :instance, <<-end_eval, __FILE__, __LINE__ + 1
             def initialize(attributes = nil)
               super(attributes) do |*args|
-                self.class.state_machines.initialize_states(self, {}, attributes || {})
                 yield(*args) if block_given?
+                self.class.state_machines.initialize_states(self, {}, attributes || {})
               end
             end
           end_eval
@@ -461,8 +461,8 @@ module StateMachines
           define_helper :instance, <<-end_eval, __FILE__, __LINE__ + 1
             def initialize(attributes = nil, options = {})
               super(attributes, options) do |*args|
-                self.class.state_machines.initialize_states(self, {}, attributes || {})
                 yield(*args) if block_given?
+                self.class.state_machines.initialize_states(self, {}, attributes || {})
               end
             end
           end_eval
